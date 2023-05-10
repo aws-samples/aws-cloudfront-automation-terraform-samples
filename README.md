@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This APG pattern helps to resolve one of the customer real time issues which is explained further. When customer deletes and reinstall the helm chart which is containing ingress, It recreates the Application Loadbalancer. Due to this its mapping in Amazon CloudFront will have stale record and services/application becomes unreachable. 
+This AWS sample code helps to resolve one of the customer real time issues which is explained further. When customer deletes and reinstall the helm chart which is containing ingress, It recreates the Application Loadbalancer. Due to this its mapping in Amazon CloudFront will have stale record and services/application becomes unreachable. 
 
 With the help of terraform templates , Lambda function will be deployed on this specific account . Based on the loadbalancer creation event, AWS Lambda will get triggered. AWS Lambda function[ python and boto3 api ] will update the Amazon CloudFront entry with latest loadbalancer DNS name.
 
@@ -71,6 +71,16 @@ No outputs.
 ## Verify Solution Deployment
 1.	Validate the loadbalancer DNS name in cloudfront configuration and event logs.
 
+## Cleanup
+
+When finished, you can delete the resources as follows:
+
+```
+cd ./terraform
+terraform destroy
+```
+
+When prompted enter `yes` to allow the stack termination to proceed.
 ## Security
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
