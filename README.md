@@ -1,4 +1,4 @@
-# cloudfront-update-automation
+# CloudFront update Terraform sample
 
 
 ## Introduction
